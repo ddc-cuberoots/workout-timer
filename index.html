@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Workout Countdown Timer</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="container py-4">
+      <div class="app mx-auto">
+        <header class="mb-4">
+          <h1 class="display-6 fw-semibold mb-1">Workout Countdown Timer</h1>
+          <p class="text-muted mb-0">
+            Set total time, interval, and a limit. Get beeps and voice cues.
+          </p>
+        </header>
+
+        <section class="card shadow-sm mb-4">
+          <div class="card-body">
+            <div class="row g-3">
+              <div class="col-12 col-md-4">
+                <label class="form-label" for="totalTime">Total Time (mm:ss)</label>
+                <input class="form-control" id="totalTime" value="15:00" />
+              </div>
+              <div class="col-12 col-md-4">
+                <label class="form-label" for="intervalTime">Interval (mm:ss)</label>
+                <input class="form-control" id="intervalTime" value="01:00" />
+              </div>
+              <div class="col-12 col-md-4">
+                <label class="form-label" for="roundLimit">Round Limit</label>
+                <input class="form-control" id="roundLimit" type="number" min="1" value="10" />
+              </div>
+              <div class="col-12">
+                <div class="d-flex flex-wrap gap-3 align-items-center">
+                  <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" id="voiceCues" checked />
+                    <label class="form-check-label" for="voiceCues">Voice cues</label>
+                  </div>
+                  <button id="testSound" class="btn btn-outline-secondary btn-sm" type="button">
+                    Test Sound
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="card shadow-sm mb-4">
+          <div class="card-body">
+            <div class="timer-display text-center mb-3">
+              <div class="time-left" id="timeLeft">15:00</div>
+              <div class="subline text-muted">
+                Round <span id="roundNow">0</span> / <span id="roundMax">10</span>
+              </div>
+            </div>
+            <div class="progress mb-3" role="progressbar" aria-label="Countdown progress">
+              <div id="progressBar" class="progress-bar" style="width: 0%"></div>
+            </div>
+            <div class="d-flex flex-wrap gap-2 justify-content-center">
+              <button id="startBtn" class="btn btn-primary">Start</button>
+              <button id="pauseBtn" class="btn btn-outline-primary" disabled>Pause</button>
+              <button id="resetBtn" class="btn btn-outline-secondary">Reset</button>
+            </div>
+          </div>
+        </section>
+
+        <section class="card shadow-sm">
+          <div class="card-body">
+            <div class="row g-3 text-center">
+              <div class="col-12 col-md-4">
+                <div class="stat-label text-muted">Interval Left</div>
+                <div class="stat-value" id="intervalLeft">01:00</div>
+              </div>
+              <div class="col-12 col-md-4">
+                <div class="stat-label text-muted">Elapsed</div>
+                <div class="stat-value" id="elapsed">00:00</div>
+              </div>
+              <div class="col-12 col-md-4">
+                <div class="stat-label text-muted">Status</div>
+                <div class="stat-value" id="status">Ready</div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
