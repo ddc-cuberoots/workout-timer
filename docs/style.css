@@ -79,11 +79,8 @@ a {
 }
 
 .hero {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 36px;
+  display: block;
   margin-top: 48px;
-  align-items: center;
 }
 
 .eyebrow {
@@ -134,8 +131,9 @@ a {
 }
 
 .hero-metrics {
-  display: grid;
-  gap: 8px;
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
   font-size: 0.95rem;
   color: var(--muted);
 }
@@ -156,23 +154,6 @@ a {
   background: var(--accent-2);
 }
 
-.hero-card {
-  background: var(--card);
-  border-radius: 20px;
-  padding: 28px;
-  box-shadow: 0 22px 40px rgba(31, 76, 74, 0.12);
-  border: 1px solid #efe6d6;
-}
-
-.card-kicker {
-  text-transform: uppercase;
-  letter-spacing: 0.2em;
-  font-size: 0.72rem;
-  color: var(--accent);
-  font-weight: 700;
-  margin-bottom: 10px;
-}
-
 .divider {
   height: 1px;
   background: var(--line);
@@ -191,6 +172,30 @@ a {
 
 .compact-list li {
   margin: 8px 0;
+}
+
+.scorecard {
+  background: var(--card);
+  border-radius: 20px;
+  padding: 28px;
+  border: 1px solid var(--line);
+  box-shadow: 0 20px 40px rgba(29, 29, 27, 0.08);
+}
+
+.scorecard-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 18px;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.scorecard-meta span {
+  background: #f4eee2;
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
 }
 
 .section {
