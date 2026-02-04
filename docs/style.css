@@ -133,23 +133,27 @@ a {
   color: var(--accent);
 }
 
-.hero-stats {
+.hero-metrics {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 16px;
-  margin-top: 18px;
-}
-
-.hero-stats .stat {
-  font-weight: 700;
-  font-size: 1.2rem;
-  color: var(--accent);
-}
-
-.hero-stats .label {
-  display: block;
-  font-size: 0.85rem;
+  gap: 8px;
+  font-size: 0.95rem;
   color: var(--muted);
+}
+
+.hero-metrics span {
+  padding-left: 14px;
+  position: relative;
+}
+
+.hero-metrics span::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.5em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent-2);
 }
 
 .hero-card {
@@ -160,25 +164,13 @@ a {
   border: 1px solid #efe6d6;
 }
 
-.hero-card h3 {
-  margin-bottom: 16px;
-}
-
-.score-line {
-  display: flex;
-  justify-content: space-between;
-  font-size: 0.95rem;
-  padding: 10px 0;
-  border-bottom: 1px solid var(--line);
-}
-
-.score {
-  font-weight: 700;
+.card-kicker {
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.72rem;
   color: var(--accent);
-}
-
-.score.positive {
-  color: #2c7a4b;
+  font-weight: 700;
+  margin-bottom: 10px;
 }
 
 .divider {
@@ -189,6 +181,16 @@ a {
 
 .card-note {
   font-size: 0.95rem;
+}
+
+.compact-list {
+  margin: 0;
+  padding-left: 18px;
+  color: var(--muted);
+}
+
+.compact-list li {
+  margin: 8px 0;
 }
 
 .section {
@@ -217,6 +219,10 @@ a {
 
 .grid.three {
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.grid.three.tight {
+  gap: 16px;
 }
 
 .panel {
@@ -256,33 +262,6 @@ a {
   text-align: center;
   background: #fff;
   font-weight: 600;
-}
-
-.timeline {
-  display: grid;
-  gap: 20px;
-}
-
-.step {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 16px;
-  align-items: start;
-  padding: 18px 20px;
-  background: var(--card);
-  border-radius: 16px;
-  border: 1px solid var(--line);
-}
-
-.step-num {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  background: var(--accent);
-  color: #fff;
-  display: grid;
-  place-items: center;
-  font-weight: 700;
 }
 
 .founder-photo {
